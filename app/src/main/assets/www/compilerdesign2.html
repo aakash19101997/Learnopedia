@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+        <h1>Parsing</h1>
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp20.jpg" alt="">
+    </div>
+
+    <p></p>
+    <p class="normal-heading"><strong>Syntax Analyzer (Parser)</strong></p>
+    <p>Syntax analyzer creates the syntactic structure of the given source program. This syntactic structure is mostly a parse tree. The syntax of a programming is described by a Context-Free Grammar (CFG). We will use BNF (Backus-Naur Form) notation in the description of CFGs.</p>
+    <p>The syntax analyzer (parser) checks whether a given source program satisfies the rules implied by a context-free grammar or not. If it satisfies, the parser creates the parse tree of that program. Otherwise the parser gives the error messages.</p>
+    <p>We categorise the parser into two groups-</p>
+    <ul>
+        <li>To check whether variables are of types on which operations are allowed</li>
+        <li>To check whether a variable has been declared before use</li>
+        <li>To check whether a variable has been initialized</li>
+        <li>These issues will be handled in semantic analysis</li>
+    </ul>
+    <p>We categorise the parser into two groups-</p>
+    <ul>
+        <li>Top-down parser (starts from the root).</li>
+        <li>Bottom-up parser (starts from the leaf).</li>
+    </ul>
+    <ul>
+        <li>Both top-down and bottom-up parsers scan the input from left-to-right (one symbol at a time).</li>
+        <li>Efficient top-down and bottom-up parsers can be implemented only for subclasses of context-free grammars.</li>
+    </ul>
+    <ul>
+        <li>LL for top-down parsing</li>
+        <li>LR for bottom-up parsing)</li>
+    </ul>
+    <p class="normal-heading">Example: Consider the following grammarExample: Consider the following grammar</p>
+    <pre>
+    E ::= E + T | E – T | T T ::= T * F | T / F | F F ::= num | id
+    For the input string: id(x) + num(2) * id(y)
+    Analysis of the top-down parsing:
+    E => E + T
+    => E + T * F
+    => T + T * F
+    => T + F * F
+    => T + num * F
+    => F + num * F
+    => id + num * F
+    => id + num * id
+
+    </pre>
+    <p>Top down parsing uses left most derivation to derive the string and uses substitutions during derivation process.
+        Analysis of the Bottom-up parsing:</p>
+    <p class="normal-heading"><strong>Analysis of the Bottom-up parsing:</strong></p>
+    <pre>
+    id(x) + num(2) * id(y)
+    => id(x) + num(2) * F
+    => id(x) + F * F
+    => id(x) + T * F
+    => id(x) + T
+    => F + T
+    => T + T
+    => E + T
+    => E
+    </pre>
+    <p>    Bottom up parsing uses reverse of right most derivation to verify the string and uses reductions during the process.</p>
+    <p class="normal-heading"><strong>Context-Free Grammars</strong></p>
+    <p>Inherently recursive structures of a programming language are defined by a CFG. In a CFG, we have A start symbol (one of the non-terminals). A finite set of terminals (in our case, this will be the set of tokens). A set of non-terminals (syntactic variables).
+        A finite set of production rules in the following form</p>
+    <code>A → α</code><p>, where A is non-terminal and a is a string of terminals (including the empty string).</p>
+    <p class="normal-heading"><strong>Parse Trees</strong></p>
+   <p> Graphical representation for a derivation that filters out the order of choosing non-terminals to avoid rewriting. The root node represents the start symbol, inner nodes of a parse tree are non-terminal Symbol.</p>
+    <p class="normal-heading"><strong>Ambiguity</strong></p>
+    <p>A grammar produces more than one parse tree for a sentence is called as ambiguous grammar. Unambiguous grammar refers unique selection of the parse tree for a sentence.</p>
+    <p><strong>Ambiguity elimination:</strong></p>
+        <ul>
+            <li>Ambiguity is problematic because meaning of the programs can be incorrect</li>
+            <li>Ambiguity can be handled in several ways</li>
+        </ul>
+    <p><strong>Enforce associativity and precedence</strong></p>
+    <p><strong>Rewrite the grammar (cleanest way)</strong></p>
+    <ul>
+        <li>There are no general techniques for handling ambiguity</li>
+        <li>It is impossible to convert automatically an ambiguous grammar to an unambiguous one</li>
+    </ul>
+    <p class="normal-heading"><strong>Left Recursion</strong></p>
+    <p>A grammar is left recursive, if it has a non-terminal A such that there is a derivation.</p>
+    <p><code>A ⇒ Aα</code> for some string α</p>
+    <p>The left-recursion may appear in a single step of the derivation (immediate left recursion) or may appear in more than one step of the derivation.</p>
+    <p>A top down parser with production <code>A → A α</code> may loop forever</p>
+    <p>From the grammar <code>A → A α | b</code> left recursion may be eliminated by transforming the grammar to</p>
+    <pre>
+    A → b R
+    R → α R | ε
+    </pre>
+
+   <p><strong> Left recursion is an issue of concern in top down parsers. A grammar is left-recursive if we can find some non-terminal A which will eventually derive a sentential form with itself as the left-symbol. In other words, a grammar is left recursive if it has a non-terminal A such that there is a derivation</strong></p>
+     <p><code>A → + A</code> for some string a. These derivations may lead to an infinite loop.</p>
+    <p>Top-down parsing technique can't handle left recursive grammars. So, we have to convert our left recursive grammar into an equivalent grammar which is not left recursive.</p>
+    <p class="normal-heading"><strong>Removal of left recursion</strong></p>
+    <p><strong>In general</strong></p>
+    <pre>
+        A → Aα1|Aα2|...|Aαm
+        |β1|β2|...|βn
+        Transforms to
+        A → β1A'|β2A'|....|βnA"
+        A → α1A'|α2A'|...|αmA'|€
+    </pre>
+    <p class="normal-heading"><strong>Left Factoring</strong></p>
+    <p>A predictive parser (a top-down parser without backtracking) insists that the grammar must be left factored.</p>
+    <p><strong><i>grammar</i></strong> → a new equivalent grammar suitable for predictive parsing.</p>
+    <p><strong><i>stmt </i></strong>→ if expr then stmt else stmt | if expr then stmt</p>
+    <p>When we see, if we can't know which production rule is to be chosen then rewrite stmt in the derivation,
+        In general,</p>
+    <div class="full-width"><img class="full-width-image" src="images/comp21.png" alt=""></div>
+    <p>where α is not empty and the first symbols of β1 and β2 (if they have one) are different.
+        When processing α, we can't know whether expand</p>
+    <pre>A → αβ1 | αβ2</pre>
+   <p> But, if we rewrite the grammar as follows</p>
+    <pre>A → αA′ A′ → β1 | β2</pre>
+    <p>so we can immediately expand A to αA′</p>.
+    <p>Dangling else problem can be handled by left factoring</p>
+
+       <p> <b><i>stmt →</i></b> if expr then stmt else stmt | if expr then stmt
+    can be transformed to</p>
+        <p>
+            <b><i>tmt →</i></b> if expr then stmt S'
+            S' → else stmt | ε
+        </p>
+
+   <p class="normal-heading"><strong> Top-down Parsing</strong></p>
+    <p><i>There are two main techniques to achieve top-down parse tree</i></p>
+    <ol>
+        <li>Recursive descent parsing</li>
+        <li>Predictive parsing</li>
+    </ol>
+    <p class="normal-heading"><strong>Recursive Descent Parsing (Uses Backtracking)</strong></p>
+
+    <p>Backtracking is needed (if a choice of a production rule does not work, we backtrack to try other alternatives). It tries to find the left most derivation. It is not efficient.</p>
+    <pre>
+    e.g., If the grammar is
+    S → aBc
+    B → bc|b and the input is abc
+    </pre>
+    <div class="full-width"><img class="full-width-image" src="images/comp22.png" alt=""></div>
+    <p class="normal-heading"><strong>Predictive Parser</strong></p>
+    <ul>
+        <li>A non recursive top down parsing method</li>
+        <li>Parser "predicts" which production to use</li>
+        <li>It removes backtracking by fixing one production for every non-terminal and input token(s)</li>
+        <li>Predictive parsers accept LL(k) languages</li>
+    </ul>
+
+    <p><i>First L stands for left to right scan of input</i></p>
+    <p><i>Second L stands for leftmost derivation</i></p>
+   <p> <b>k</b> stands for number of lookahead token</p>
+    <p>In practice LL(1) is used</p>
+    <div class="full-width"><img class="full-width-image" src="images/comp23.png" alt=""></div>
+
+
+    <div class="previous"><a href="compilerdesign1.html">←</a></div>
+    <div class="sub-home"><a href="compiler%20%20design.html">&#8962;</a></div>
+
+    <div class="next"><a href="compilerdesign3.html">→</a></div>
+</div>
+</body>
+</html>

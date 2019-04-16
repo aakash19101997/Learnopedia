@@ -1,0 +1,10 @@
+0;Which Boolean law is represented by the equation A*(B+c)=A*B + A*c?;Commutative Law;Associative Law;Distributive Law;Complement Law;3;Distributive Law
+1;How many pulses are needed to change the contents of a 8-bit up counter from 10101100 to 00100111 (rightmost bit is the LSB)?;134;133;124;123;4;123
+2;In which of the following gates,the output is 1, if and only if at least one input is 1?;NOR;AND;OR;NAND;3;OR
+3;The time required for a gate or inverter to change its state is called;Rise time;Decay time;Propagation time;Charging time;3;Propagation Time
+4;The time required for a pulse to change from 10 to 90 percent of its maximum value is called;Rise time;Decay time;Propagation time;Operating time;1;Rise Time
+5;What is the minimum number of two-input NAND gates used to perform the function of two input OR gate ?;one;two;three;four;3;three
+6;Which one of the following will give the sum of full adders as output ?;Three point majority circuit;Three bit parity checker;Three bit comparator;Three bit counter;4;Three bit counter
+7;The number of full and half-adders required to add 16-bit numbers is;8 half-adders, 8 full-adders;1 half-adder, 15 full-adders;16 half-adders, 0 full-adders;4 half-adders, 12 full-adders;2;1 half-adder, 15 full-adders
+8;Which of the following expressions is not equivalent to X'?;X NAND X;X NOR X;X NAND 1;X NOR 1;4;X NOR 1
+9;Which of the following gates are added to the inputs of the OR gate to convert it to the NAND gate ?;NOT;AND;OR;XOR;1;NOT

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+
+        <h1>Syntax Directed Translations</h1>
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp30.jpg" alt="">
+    </div>
+    <p>Grammar symbols are associated with attributes to associate information with the programming language constructs that they represent. Values of these attributes are evaluated by the semantic rules associated with the production rules.</p>
+    <b>Attribute Grammar Framework</b>
+    <ul>
+        <li>Generalization of CFG where each grammar symbol has an associated set of attributes</li>
+        <li>Values of attributes are computed by semantic rules</li>
+        <li>Two notations for associating semantic rules with productions</li>
+    </ul>
+    <b>Syntax directed definition</b>
+    <ol>
+        <li>high level specifications</li>
+        <li>hides implementation details</li>
+        <li>explicit order of evaluation is not specified</li>
+    </ol>
+    <b>Translation schemes</b>
+    <ul>
+        <li>indicate order in which semantic rules are to be evaluated</li>
+        <li>allow some implementation details to be shown</li>
+    </ul>
+    <p>Evaluation of the semantic rules are as follows</p>
+    <ol>
+        <li>May generate intermediate codes</li>
+        <li>May put information into the symbol table</li>
+        <li>May perform type checking</li>
+        <li>May issue error messages</li>
+        <li>May perform some other activities</li>
+    </ol>
+    <ol>
+        <li>1.	An attribute may hold a string, a number, a memory location, a complex record etc.</li>
+        <li>2.	Evaluation of a semantic rule defines the value of an attribute, but a semantic rule may also have some side effects such as printing a value.</li>
+    </ol>
+    <p><b>Attributes</b></p>
+    <ul>
+        <li>Attributes fall into two classes: synthesized and inherited</li>
+        <li>The value of a synthesized attribute is computed from the values of its children nodes</li>
+        <li>The value of an inherited attribute is computed from the sibling and parent nodes.</li>
+    </ul>
+    <p><b><i>S-Attributed grammar:</i></b> A syntax directed definition that uses only synthesized attributes is said to be an S- attributed definition. A parse tree for an S-attributed definition can be annotated by evaluating semantic rules for attributes.</p>
+    <p>Translations are appended only at the end.</p>
+    <p>It uses bottom up parsing for evaluation.</p>
+    <p><b><i>L-attributed grammar:</i></b> When translation takes place during parsing, order of evaluation is linked to the order in which nodes are created. L-attributed definition: where attributes can be evaluated in depth-first order.</p>
+    <p>This definition can use synthesized attributes and also restricted inherited attributes(the value can be taken from parent and left siblings only).</p>
+    <p>Translations can append anywhere in the rhs of the production.</p>
+    <p>It uses a natural order in both top-down and bottom-up parsing is depth first-order.</p>
+    <p class="normal-heading"><i><b>Evaluation order of SDT’s</b></i></p>
+    <ul>
+        <li>Using definitions: L-attributed definition and S-attributed definition</li>
+        <li>Using parsing: Top-down evaluation and Bottom up evaluation</li>
+    </ul>
+    <p><b><i>Dependency Graph : </i></b>Directed graph indicating interdependencies among the synthesized and inherited attributes of various nodes in a parse tree.</p>
+    <p><b>Syntax directed translation table: </b>Symbols E, T and F are associated with an attribute value.</p>
+    <div class="full-width"><img class="full-width-image" src="images/comp31.png" alt=""></div>
+
+
+    <div class="previous"><a href="compilerdesign2.html">←</a></div>
+    <div class="sub-home"><a href="compiler%20%20design.html">&#8962;</a></div>
+    <div class="next"><a href="compilerdesign4.html">→</a></div>
+
+</div>
+</body>
+</html>
+

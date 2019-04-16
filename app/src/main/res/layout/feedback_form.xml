@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FEEDBACK"
+                android:textSize="26sp"
+                android:textColor="@color/B"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                />
+
+        <RelativeLayout
+            android:layout_margin="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Name:"
+                android:id="@+id/tvname"
+                android:textSize="23sp"
+                android:textColor="@color/B"/>
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/etname"
+                android:textColor="@color/B"
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/tvname" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Mobile:"
+                android:id="@+id/tvmobile"
+                android:textSize="23sp"
+                android:textColor="@color/B"
+                android:layout_marginTop="50dp"
+                android:layout_below="@+id/tvname"/>
+            <EditText
+                android:layout_toRightOf="@+id/tvmobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etmobile"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp"
+                android:textColor="@color/B"
+                android:layout_below="@+id/etname"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvrating"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="What do you think of our App?"
+                android:textSize="23sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/B"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:clickable="true"
+                    android:id="@+id/imgbtn1"
+                    android:src="@drawable/one" />
+                <ImageButton
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/two"
+                    android:layout_marginLeft="4dp"
+                    android:id="@+id/imgbtn2"
+
+                    style="?android:attr/borderlessButtonStyle"
+                    android:clickable="true"/>
+                <ImageButton
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/three"
+                    android:layout_marginLeft="4dp"
+                    android:id="@+id/imgbtn3"
+
+                    style="?android:attr/borderlessButtonStyle"
+                    android:clickable="true"/>
+                <ImageButton
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/four"
+                    android:id="@+id/imgbtn4"
+                    android:layout_marginLeft="4dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:clickable="true"/>
+                <ImageButton
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/five"
+                    android:id="@+id/imgbtn5"
+                    android:layout_marginLeft="4dp"
+                    style="?android:attr/borderlessButtonStyle" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="What would you like to share with us?"
+                android:textColor="@color/B"
+                android:textSize="23sp"
+                android:layout_margin="25dp"/>
+
+        </LinearLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:inputType="textMultiLine"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Write your comments here:"
+            android:id="@+id/etcomments"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How likely would you recommend our App to your friends and colleagues?"
+            android:textColor="@color/B"
+            android:textSize="23sp"
+            android:layout_margin="30dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:text="1"
+                android:textStyle="bold"
+                android:background="#E6C4F1"
+
+                android:id="@+id/btn1"
+                android:textColor="@color/B"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:text="2"
+                android:layout_marginLeft="2dp"
+                android:textStyle="bold"
+                android:background="#E6C4F1"
+                android:id="@+id/btn2"
+                android:textColor="@color/B"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:text="3"
+                android:id="@+id/btn3"
+                android:layout_marginLeft="2dp"
+                android:background="#E6C4F1"
+                android:textStyle="bold"
+                android:textColor="@color/B"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:text="4"
+                android:textStyle="bold"
+                android:id="@+id/btn4"
+                android:layout_marginLeft="2dp"
+                android:background="#E6C4F1"
+                android:textColor="@color/B"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:background="#E6C4F1"
+                android:text="5"
+                android:id="@+id/btn5"
+                android:layout_marginLeft="2dp"
+                android:textStyle="bold"
+                android:textColor="@color/B"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:text="6"
+                android:textStyle="bold"
+                android:id="@+id/btn6"
+                android:layout_marginLeft="2dp"
+                android:background="#E6C4F1"
+                android:textColor="@color/B"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="2dp"
+                android:background="#E6C4F1"
+                android:text="7"
+                android:id="@+id/btn7"
+                android:textStyle="bold"
+                android:textColor="@color/B"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="2dp"
+                android:text="8"
+                android:id="@+id/btn8"
+                android:background="#E6C4F1"
+                android:textStyle="bold"
+                android:textColor="@color/B"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:text="9"
+                android:id="@+id/btn9"
+                android:background="#E6C4F1"
+                android:layout_marginLeft="2dp"
+                android:textStyle="bold"
+                android:textColor="@color/B"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:text="10"
+                android:id="@+id/btn10"
+                android:background="#E6C4F1"
+                android:layout_marginLeft="2dp"
+                android:textStyle="bold"
+                android:textColor="@color/B"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tvq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="not at all"
+                android:textSize="17dp"
+                android:textColor="#12A4F0"
+                />
+            <TextView
+                android:layout_marginLeft="170dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tvq"
+                android:text="very likely"
+                android:textSize="17dp"
+                android:textColor="#12A4F0"
+                />
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/borderlessButtonStyle"
+                android:src="@drawable/submit"
+                android:layout_centerHorizontal="true"
+
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</ScrollView>

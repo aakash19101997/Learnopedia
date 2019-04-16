@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Divide and Conquer Algorithms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Divide and Conquer Algorithms</h1>
+    <div class="full-width">
+        <img class="full-width-image" src="images/algo10.jpg" alt="">
+    </div>
+    <b>Greedy Design Technique</b>
+    <ul>
+        <li>Greedy algorithms uses the heuristic of making the locally optimal choice at each stage of problem solving, with the hope of finding a globally optimal.</li>
+        <li>An optimization problem can be solved using following Greedy approach
+            <ul>
+                <li>Greedy-choice property: A global optimum can be arrived at by selecting a local optimum.</li>
+                <li>Optimal substructure: An optimal solution to the problem contains an optimal solution to subproblems.</li>
+            </ul>
+        </li>
+    </ul>
+    <p class="normal-heading"><b>Greedy Algoritms</b></p>
+    <ul>
+        <li>Single Source shortest path (Dijkstra's Algorithm)</li>
+        <li>Minimum Spanning Tree (Kruskal's algorithm & Prim's algorithm)</li>
+        <li>Huffman Coding (Optimal prefix code)</li>
+        <li>Fractional knapsack problem</li>
+        <li>Activity Selection Problem</li>
+    </ul>
+    <p class="normal-heading"><b>Huffman Coding</b></p>
+    <ul>
+        <li>Storage space for files can be saved by compressing them where each symbol can be replaced by a unique binary string.</li>
+        <li>Minimum Spanning Tree (Kruskal's algorithm & Prim's algorithm)</li>
+        <li>Each code needs to be prefix free that is no codeword is a prefix of another code.</li>
+        <li>The Huffman coding is a greedy method for obtaining an optimal prefix-free binary code.</li>
+    </ul>
+    <pre>
+        Example:  Find the average word length for the
+        following letters with the given frequency of
+        use of the letters.
+        E - 40%; A - 30%; M-20%; N-5%; T-5%
+    </pre>
+    <b>Solution: </b>
+    <p>Following huffman tree can be constructed using the given frequencies.</p>
+    <div class="full-width"><img class="full-width-image" src="images/graph11.png" alt=""></div>
+    <div class="full-width"><img class="full-width-image" src="images/graph12.png" alt=""></div>
+    <b>Activity-Selection (scheduling) problem</b>
+    <ul>
+        <li>S = {1, 2, .., n} proposed activities</li>
+        <li>All want the same resource (classroom), used by one at a time</li>
+        <li>Each activity i has start time si and finish time fi, si <= fi, [si, fi)</li>
+        <li>Two activities i and j are compatible if they do not overlap (si >= fj or sj >= fi )</li>
+    </ul>
+    <p><b>Problem:</b> Select maximum-size set of compatible activities. Assume the input is sorted by f1<=f2<=…<=fn  (O(n lgn)).</p>
+    <pre>
+    ActivitySelection(s, f)
+    1  n = length(s)
+    2  A = {1}      ; Initialize A
+    3  j = 1
+    4  for i = 2 to n
+    5    if   si >= fj    ; Compatible
+    6    then A = A U {i}
+    7      j = i
+    8  return A
+    </pre>
+    <div class="full-width"><img class="full-width-image" src="images/graph13.png" alt=""></div>
+    <p class="normal-heading">Dynamic Programming</p>
+    <p>Dynamic programming helps to solve a complex problem by breaking it down into a collection of simpler subproblems, solving each of those sub-problems just once, and storing their solutions. A dynamic programming algorithm will examine the previously solved sub problems and will combine their solutions to give the best solution for the given problem.</p>
+    <p class="normal-heading"><i><b>Dynamic Programming Algorithms</b></i></p>
+    <ul>
+        <li>Fibonacci sequence</li>
+        <li>0-1 knapsack problem</li>
+        <li>Maximum sub array problem</li>
+        <li>Longest Common Subsequence problem</li>
+        <li>Matrix chain multiplication</li>
+        <li>All pairs shortest path problem</li>
+    </ul>
+    <div class="previous"><a href="algodesigntech.html">←</a></div>
+    <div class="sub-home"><a href="algodesigntech.html">&#8962;</a></div>
+    <div class="next"><a href="algo2.html">→</a></div>
+</div>
+</body>
+</html>

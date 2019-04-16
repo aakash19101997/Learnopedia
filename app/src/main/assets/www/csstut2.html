@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Tutorials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="sub-heading"><h1>CSS</h1></div>
+    <h2>Lengths and Percentages</h2>
+        <p>There are many property-specific units for values used in CSS, but there are some general units that are used by a number of properties and it is worth familiarizing yourself with these before continuing.</p>
+        <ul>
+            <li><code>px</code> (such as <code>font-size: 12px</code>) is the unit for pixels.</li>
+            <li><code>em</code> (such as <code>font-size: 2em</code>) is the unit for the calculated size of a font. So “2em”, for example, is two times the current font size.</li>
+            <li><code>pt</code> (such as <code>font-size: 12pt</code>) is the unit for points, for measurements typically in printed media.</li>
+            <li><code>%</code> (such as <code>width: 80%</code>) is the unit for… wait for it… percentages.</li>
+        </ul>
+        <p>
+            Colors can be applied by using color and background-color (note that this must be the American English “color” and not “colour”).
+A blue background and yellow text could look like this:
+        </p>
+        <pre>
+            <code>
+                body {
+                    font-size: 14px;
+                    color: navy;
+                }
+                
+                h1 {
+                    color: #ffc;
+                    background-color: #009;
+                }
+            </code>
+        </pre>
+        <h2>Margin and Padding</h2>
+        <p>margin and padding are the two most commonly used properties for spacing-out elements. A margin is the space outside something, whereas padding is the space inside something.</p>
+        <pre>
+            <code>
+                h2 {
+                    font-size: 1.5em;
+                    background-color: #ccc;
+                    margin: 20px;
+                    padding: 40px;
+                }
+            </code>
+        </pre>
+        <p>This leaves a 20-pixel width space around the secondary header and the header itself is fat from the 40-pixel width padding.
+
+        </p>
+        <h2>Shorthand properties</h2>
+        <pre>
+            <code>
+                p {
+                    margin-top: 1px;
+                    margin-right: 5px;
+                    margin-bottom: 10px;
+                    margin-left: 20px;
+                }
+            </code>
+        </pre>
+        <p>can be summed up as :-</p>
+        <code>
+            <pre>
+                p {
+                    margin: 1px 5px 10px 20px;
+                }
+            </pre>
+        </code>
+        <p>This is also same for margin and borders</p>
+        <div class="previous"><a href="csstut1.html">←</a></div>
+    <div class="sub-home"><a href="csstuts.html">&#8962;</a></div>
+    <div class="next"><a href="csstuts.html">→</a></div>
+</div>
+</body>
+</html>

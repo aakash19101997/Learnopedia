@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/aa"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/tv"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textColor="#ffa500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="70dp"
+        android:text="Select Videos to start learning"
+        />
+
+
+    <Button
+        android:textSize="20dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/tv"
+        android:fadingEdge="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intermediate Code generetion"
+        android:id="@+id/cd1"
+        android:onClick="videoClick"
+        />
+    <Button
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_below="@id/cd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parsing"
+        android:id="@+id/cd2"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_centerInParent="true"
+        android:onClick="videoClick"/>
+    <Button
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_below="@id/cd2"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:text="Syntax Directed Translation"
+        android:id="@+id/cd3"
+        android:onClick="videoClick"/>
+    <Button
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/cd3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lexical Analysis"
+        android:id="@+id/cd4"
+        android:onClick="videoClick"/>
+    <Button
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/cd4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Runtime Environments"
+        android:id="@+id/cd5"
+        android:onClick="videoClick"/>
+
+</RelativeLayout>

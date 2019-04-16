@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/aa"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:textColor="#ffa500"
+        android:id="@+id/tv"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:textSize="25dp"
+        android:paddingBottom="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Videos to start learning"
+        />
+    <Button
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_below="@id/tv"
+        android:fadingEdge="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="css Tutorial part 1"
+        android:id="@+id/d1"
+        style="?android:attr/borderlessButtonStyle"
+        android:onClick="vcssclick"/>
+    <Button android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@id/d1"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="css Tutorial part 2"
+        android:id="@+id/d2"
+        android:onClick="vcssclick"/>
+
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#DCD9D9"
+   >
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back"
+        android:id="@+id/cut"
+       android:layout_alignParentRight="true"
+        />
+    <TextView android:text="Choosoe Your Subject"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="70dp"
+        />
+
+    <HorizontalScrollView
+        android:id="@+id/scroll"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/comp_d"
+                android:background="@drawable/edittext_bg"
+                android:layout_margin="10dp"
+                android:layout_width="130dp"
+                android:layout_height="120dp"
+                android:text="Compiler Design"
+                android:drawableTop="@drawable/computer"
+                android:paddingTop="10dp"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+            <Button
+                android:id="@+id/algo"
+                android:background="@drawable/edittext_bg"
+                android:layout_margin="10dp"
+                android:layout_width="130dp"
+                android:layout_height="120dp"
+                android:text="Algorithm"
+                android:paddingTop="10dp"
+                android:drawableTop="@drawable/algo"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+            <Button
+                android:id="@+id/digital_logic"
+                android:background="@drawable/edittext_bg"
+                android:layout_margin="10dp"
+                android:layout_width="130dp"
+                android:layout_height="120dp"
+                android:text="Digital LOgic"
+                android:paddingTop="10dp"
+                android:drawableTop="@drawable/logic"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+            <Button
+                android:id="@+id/html"
+                android:background="@drawable/edittext_bg"
+                android:layout_margin="10dp"
+                android:layout_width="130dp"
+                android:layout_height="120dp"
+                android:text="Html"
+                android:paddingTop="10dp"
+                android:drawableTop="@drawable/html"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+            <Button
+                android:id="@+id/css"
+                android:background="@drawable/edittext_bg"
+                android:layout_margin="10dp"
+                android:layout_width="130dp"
+                android:layout_height="120dp"
+                android:text="CSs"
+                android:paddingTop="10dp"
+                android:drawableTop="@drawable/css"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+</RelativeLayout>

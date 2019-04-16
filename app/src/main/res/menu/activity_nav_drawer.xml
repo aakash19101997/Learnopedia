@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="single">
+        <item android:title="SUBJECTS">
+            <menu>
+
+        <item
+            android:id="@+id/comp_d"
+            android:icon="@drawable/compilerdesignicon"
+            android:title="COMPILER DESIGN" />
+
+        <item
+            android:id="@+id/algo"
+            android:icon="@drawable/algorithmicon"
+            android:title="ALGORITHMS" />
+        <item
+            android:id="@+id/digital_logic"
+            android:icon="@drawable/digitallogicicon"
+            android:title="DIGITAL LOGIC" />
+            </menu>
+        </item>
+
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="VIDEOS">
+            <menu>
+                <item android:title="COMPILER DESIGN "
+                    android:id="@+id/vcomp_d"
+                    android:icon="@drawable/videosalgoicon"/>
+                <item android:title="ALGORITHMS"
+                    android:icon="@drawable/videoscompilericon"
+                    android:id="@+id/valgo"/>
+                <item android:title="DIGITAL LOGIC"
+                    android:id="@+id/vdigital_logic"
+                    android:icon="@drawable/videosdigitalicon"/>
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="QUIZ">
+            <menu>
+                <item android:title="COMPILER_DESIGN"
+                    android:id="@+id/qcomp_d"
+                    android:icon="@drawable/quizcompilericon"/>
+                <item android:title="ALGORITHMS"
+                    android:icon="@drawable/quizalgoicon"
+                    android:id="@+id/qalgorithms"/>
+                <item android:title="DIGITAL LOGIC"
+                    android:id="@+id/qdigital_logic"
+                    android:icon="@drawable/quizdigitalicon"/>
+            </menu>
+        </item>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/feedback"
+                android:title="Feedback Form"
+                android:icon="@drawable/feedback"/>
+            <item
+                android:id="@+id/contact_us"
+                android:title="Contact us"
+                android:icon="@drawable/icon2"
+                />
+        </menu>
+    </item>
+
+</menu>

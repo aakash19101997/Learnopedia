@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Lexical Analysis</h1>
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp40.jpg" alt="">
+    </div>
+    <p>Lexical analyzer reads the source program character by character and returns the tokens of the source program. It puts information about identifiers into the symbol table.</p>
+    <p><b>The Role of Lexical Analyzer:</b></p>
+    <ul>
+        <li>It is the first phase of a compiler</li>
+        <li>It reads the input character and produces output sequence of tokens that the Parser uses for syntax analysis.</li>
+        <li>It can either work as a separate module or as submodule.</li>
+        <li>Lexical Analyzer is also responsible for eliminating comments and white spaces from the source program.</li>
+        <li>It also generates lexical errors.</li>
+        <li>Lexical Analyzer is also responsible for eliminating comments and white spaces from the source program.</li>
+        <li>It also generates lexical errors.</li>
+    </ul>
+    <div class="full-width"><img class="full-width-image" src="images/comp41.png" alt=""></div>
+    <p><b><i>Tokens, Lexemes and Patterns</i></b></p>
+  <ul>
+      <li>A token describes a pattern of characters having same meaning in the source program such as identifiers, operators, keywords, numbers, delimiters and so on. A token may have a single attribute which holds the required information for that token. For identifiers, this attribute is a pointer to the symbol table and the symbol table holds the actual attributes for that token.</li>
+      <li>Token type and its attribute uniquely identify a lexeme.</li>
+      <li>Regular expressions are widely used to specify pattern.</li>
+  </ul>
+    <p>Tokens, Patterns and Lexemes Lexeme:Sequence of character in the source pm that is matched against the pattern for a token Pattern:The rule associated with each set of string is called pattern. A lexeme is matched against the pattern to generate token. Token: Token is word, which describes the lexeme in source pgm. Its is generated when lexeme is matched against a pattern.</p>
+    <pre> Example: Lexeme: A1, Sum, Total</pre>
+<p>   <i><b>Pattern:</b></i> Starting with a letter and followed by letter or digit but not a keyword.
+</p> <p> <b><i>Token:</i></b> ID</p>
+    <pre>
+        Lexeme: If | Then | Else
+    •	Pattern: If | Then | Else
+    •	Token: IF | THEN | ELSE
+    </pre>
+    <pre>
+        Lexeme: 123.45
+    •	Pattern: Starting with digit followed by a digit or optional fraction and or optional exponent
+    •	Token: NUM
+    </pre>
+
+
+
+    <div class="previous"><a href="compilerdesign3.html">←</a></div>
+    <div class="sub-home"><a href="compiler%20%20design.html">&#8962;</a></div>
+
+    <div class="next"><a href="compilerdesign5.html">→</a></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimum Spanning Tree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="sub-heading"><h1>Minimum Spanning Tree</h1></div>
+    <div class="full-width"><img class="full-width-image" src="images/spath20.jpg" alt=""></div>
+
+    <p>A spanning tree is a subset of Graph G, which has all the vertices covered with minimum possible number of edges.
+        Let a Graph G has n vertices and e edges.</p>
+    <ul>
+        <li>Then Spanning tree T of Graph G contains n vertices and (n-1) edges.</li>
+        <li>Spanning tree T has no cycles which is a tree.</li>
+    </ul>
+    <p>Minimum Weight Spanning Tree (MST): It is a spanning tree where the total edge weight is minimal among all the possible spanning trees of the given graph G. Such spanning tree with minimum weight is called minimum weight spanning tree (MST).</p>
+    <ul>
+        <li>An MST is not necessarily unique.</li>
+
+    </ul>
+    <p>Example: Consider the following graph G. Find the minimum weight spanning tree of G.</p>
+    <p>There are two popular Greedy algorithms for finding the minimum spanning tree.</p>
+    <ul>
+        <li>Kruskal's Algorithm</li>
+        <li>Prim's Algorithm</li>
+    </ul>
+    <p>Prim's Algorithm computes MST by starting at one vertex and grow the tree.</p>
+    <b>Kruskal's Algorithm</b>
+    <ul>
+        <li>It follows greedy approach to compute the minimum spanning tree.</li>
+        <li>Kruskal's Algorithm computes minimum spanning tree by considering the edges in increasing order of weight.</li>
+        <li>Intermediate result of kruskal's algorithm may be connected or disconnected graph.</li>
+        <li>It can be implemented using Union find data structure.</li>
+    </ul>
+    <div class="full-width"><img class="full-width-image" src="images/minspan11.png" alt=""></div>
+    <div class="full-width"><img class="full-width-image" src="images/minspan12.png" alt=""></div>
+    <p><b>Prim’s algorithm</b></p>
+    <ul>
+        <li>It can be implemented using priority queue.</li>
+        <li>Intermediate result of prim's algorithm always connected graph.</li>
+    </ul>
+    <div class="full-width"><img class="full-width-image" src="images/minspan13.png" alt=""></div>
+    <div class="previous"><a href="Graphs1.html">←</a></div>
+    <div class="sub-home"><a href="Graphs.html">&#8962;</a></div>
+    <div class="next"><a href="Graphs1.html">→</a></div>
+</div>
+</body>
+</html>
+
+
+
+

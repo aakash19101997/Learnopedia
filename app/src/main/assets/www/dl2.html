@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Arithematic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="sub-heading"><h1>Computer Arithematic</h1></div>
+    <div class="full-width"><img class="full-width-image" src="images/dl20.jpg" alt=""></div>
+
+    <p>Arithmetic and Logical Unit (ALU) is responsible to do all
+        arithmetic operations in computer with the help of control
+        units and registers of CPU. The following diagram is block diagram of
+        computer where ALU is shown as component of CPU along with other components.</p>
+    <div class="full-width"><img class="full-width-image" src="images/dl21.png" alt=""></div>
+    <p>
+        <b>Fixed Point Representation</b>
+        Because of computer hardware limitation everything including the sign of number has to be represented either by 0's or 1's. So, for a positive number the leftmost bit or sign bit is always 0 and for a negative number the sign bit should be 1.
+
+    </p>
+    <p>
+        <b>Floating Point Representation</b>
+
+        A floating point number can be represented using two points. First is called mantissa (m) and other one is exponent (e). Thus, in a number system with base r, a floating point number with mantissa m and exponent e will be represented as (m × re).
+
+    </p>
+    <div class="full-width"><img class="full-width-image" src="images/dl22.png" alt=""></div>
+    <p>The value of m may be a fraction or an integer. Thus, a number (2.25)10 can be represented as 0.225 × 101.
+        Here, m = 225 and e = 1, r = 10.
+        For n bit register, MSB will be sign bit and (n – 1) bits will be magnitude.
+        So, positive largest number that can be stored is (2n-1 – 1) and negative lowest number is –(2n-1 – 1).
+    </p>
+    <pre>
+        Step 1: Determine the sign bit. Save this for later.
+Step 2: Convert the absolute value of the number to normalized form.
+Step 3: Determine the eight–bit exponent field.
+Step 4: Determine the 23–bit significand. There are shortcuts here.
+Step 5: Arrange the fields in order.
+Step 6: Rearrange the bits, grouping by fours from the left.
+Step 7: Write the number as eight hexadecimal digits.
+
+Example: The Negative Number – 0.750
+
+Step 1: The number is negative. The sign bit is S = 1.
+Step 2: 0.750 = 1.5 ∙ 0.50 = 1.5 ∙ 2–1. The exponent is P = – 1.
+Step 3: P + 127 = – 1 + 127 = 126. As an eight–bit number, this is 0111 1110.
+Step 4: Convert 1.5 to binary. 1.5 = 1 + ½ = 1.12. The significand is 10000.
+To get the significand, drop the leading “1.” from the number.
+Note that we do not extend the significand to its full 23 bits,
+but only place a few zeroes after the last 1 in the string.
+Step 5: Arrange the bits: Sign | Exponent | Significand
+Sign Exponent Significand
+1 0111 1110 1000 … 00
+Step 6: Rearrange the bits
+1011 1111 0100 0000 … etc.
+Step 7: Write as 0xBF40. Extend to eight hex digits: 0xBF40 0000.
+
+    </pre>
+    <b>Actual Number Finding Technique</b>
+    <p>Here, we always store exponent in positive. Biased number is also called excess number. Since, exponent is stored in biased form, so bias number is added to the actual exponent of the given number. Actual number can be calculated from the contents of the registers by using following formula
+        Actual number = (–1)s (1 + m) × 2e–Bias</p>
+    <pre>
+    S = Sign bit
+m = Mantissa value of register
+e = Exponent value of register
+Bias = Bias number of n bits used to represent exponent, then
+Bias number = (2n–1 –1)
+Range of exponent = –(2k–1 –1) to 2k–1.
+    </pre>
+    <div class="previous"><a href="dl1.html">←</a></div>
+    <div class="sub-home"><a href="digitallogic.html">&#8962;</a></div>
+    <div class="next"><a href="dl3.html">→</a></div>
+</div>
+</body>
+</html>
+
+
+

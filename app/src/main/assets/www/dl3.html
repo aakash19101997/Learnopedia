@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boolean Algebra and Minimisation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="sub-heading"><h1>Boolean Algebra</h1></div>
+    <div class="full-width"><img class="full-width-image" src="images/dl30.jpg" alt=""></div>
+
+    <p>Boolean algebra is an algebric structure defined on a set of elements together with two binary operators (+) and (.)</p>
+    <ul>
+        <li>A variable is a symbol, for example Α,used to represent a logical quantity, whose value can be 0 or 1.</li>
+        <li>The complement of a variable is the inverse of a variable and is represented by an over bar, for example  .</li>
+        <li>A literal is a variable or the complement of a variable.</li>
+    </ul>
+    <p><b>Closure:</b> For any x and y in the alphabet A, x + y and x.y are also in A.</p>
+    <b>Boolean Value</b>
+    <p>The value of Boolean variable can be either 1 or 0.</p>
+    <b>Boolean Operators</b>
+    <p>There are four Boolean operators</p>
+    <ol>
+        <li>AND (∙) operator (A.B)</li>
+        <li>OR (+) operator (A + B)</li>
+        <li>NOT   operator</li>
+        <li>XOR (⊕) operator</li>
+    </ol>
+    <b>Operator Precedence</b>
+    <p>The operator for evaluating Boolean expression is</p>
+    <ol>
+        <li>Paranthesis</li>
+        <li>NOT</li>
+        <li>AND</li>
+        <li>OR</li>
+    </ol>
+    <b>Duality</b>
+    <p>If an expression contains only the operations AND, OR and NOT. Then, the dual of that expression is obtained by replacing each AND by OR, each OR by AND, all occurrences of 1 by 0, and all occurrences of 0 by 1. Principle of duality is useful in determining the complement of a function.
+        Logic expression: (x •y' •z) + (x •y •z' ) + (y •z) + 0 ,
+        Duality of above logic expression is: (x + y' + z) • (x + y + z' ) • (y + z) • 1
+    </p>
+    <b>Boolean Function</b>
+    <ul>
+        <li>Any Boolean functions can be formed from binary variables and the Boolean operators •, +, and ' (for AND, OR, and NOT, respectively).</li>
+        <li>For a given value of variable, the function can take only one value either 0 or 1.</li>
+        <li>A Boolean function can be shown by a truth table. To show a function in a truth table we need a list of the 2ncombinations of 1's and 0's of the n binary variables and a column showing the combinations for which the function is equal to 1 or 0. So, the table will have 2nrows and columns for each input variable and tile final output.</li>
+        <li>A function can be specified or represented in any of the following ways:
+            <ul>
+                <li>A truth table</li>
+                <li>A circuit</li>
+                <li>SOP (Sum Of Products)</li>
+                <li>POS (Product of Sums)</li>
+                <li>Canonical SOP</li>
+                <li>Canonical POS</li>
+            </ul>
+        </li>
+        <li>Important Boolean operations over Boolean values:
+        </li>
+    </ul>
+    <div class="full-width"><img class="full-width-image" src="images/dl31.png" alt=""></div>
+    <p>Table of Some Basic Theorems:</p>
+    <div class="full-width"><img class="full-width-image" src="images/dl32.png" alt=""></div>
+
+    <div class="previous"><a href="dl2.html">←</a></div>
+    <div class="sub-home"><a href="digitallogic.html">&#8962;</a></div>
+    <div class="next"><a href="dl4.html">→</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.minorproject.minorproject.activities.NavActivity"
+    tools:showIn="@layout/app_bar_nav"
+    android:id="@+id/frame">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/mainpage"
+        android:src="@drawable/mainpage"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"/>
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_centerInParent="true"
+        android:layout_alignTop="@id/mainpage"
+        android:paddingTop="50dp"
+        android:src="@drawable/eduacationappico"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <TextView
+        android:id="@+id/tv1"
+        android:text="Learnopedia"
+        android:textSize="40dp"
+        android:layout_centerInParent="true"
+        android:textColor="#ffa500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icon"/>
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_below="@id/tv1"
+        android:textColor="#ffae42"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="An interactive app with study material,quizzes "/>
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_below="@id/tv2"
+            android:textColor="#ffae42"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="and Discussion Forum "/>
+    <TextView
+        android:id="@+id/tv4"
+        android:paddingTop="130dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv3"
+        android:textColor="#000000"
+        android:text="START LEARNING FROM NAVIGATION BAR"
+        android:fontFamily="sans-serif"
+        android:fadingEdge="horizontal"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/arrow"/>
+    <ImageView
+        android:id="@+id/arrow"
+        android:src="@drawable/icon1"
+        android:paddingTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv3"
+        />
+
+    </RelativeLayout>
+
+</FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

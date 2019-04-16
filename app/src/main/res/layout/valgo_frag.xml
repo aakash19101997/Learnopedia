@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/aa"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:textColor="#ffa500"
+        android:id="@+id/tv"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:textSize="25dp"
+        android:paddingBottom="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Videos to start learning"
+        />
+    <Button
+        android:textSize="20dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_below="@id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shortest Path "
+        android:id="@+id/a1"
+        android:onClick="algoClick"/>
+    <Button
+        android:textSize="20dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_below="@id/a1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Minimum Spanning Tree"
+        android:id="@+id/a2"
+        android:onClick="algoClick"/>
+    <Button
+        android:textSize="20dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_below="@id/a2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Divide And Conquer Algorithms"
+        android:id="@+id/a3"
+        android:onClick="algoClick"/>
+    <Button
+        android:textSize="20dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_below="@id/a3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dynamic Programming"
+        android:id="@+id/a4"
+        android:onClick="algoClick"/>
+    <Button
+        android:textSize="20dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_below="@id/a4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Greedy Algorithms"
+        android:id="@+id/a5"
+        android:onClick="algoClick"/>
+    <Button
+        android:textSize="20dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_below="@id/a5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Searching and Sorting"
+        android:id="@+id/a6"
+        android:onClick="algoClick"/>
+
+
+
+</RelativeLayout>

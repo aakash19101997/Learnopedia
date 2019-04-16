@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:layout_gravity="fill" android:padding="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/txtNumber"
+        android:height="40sp"
+        android:background="#D4F7D4"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="25sp"
+        tools:ignore="RtlCompat" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="x^2"
+            android:text="x\u00B2" />
+
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="operatorClick"
+            android:tag="x^y"
+            android:text="x^y" />
+
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="sin"
+            android:text="sin" />
+
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="cos"
+            android:text="cos" />
+
+        <Button  android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="tan"
+            android:text="tan" />
+
+        <Button  android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="clearClick"
+            android:tag="CE"
+            android:text="CE" />
+
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="clearClick"
+            android:tag="C"
+            android:text="C" />
+
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="backClick"
+            android:tag="Back"
+            android:text="Back" />
+
+        <Button
+            style="@style/ButtonAppTheme"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:onClick="operatorClick"
+            android:tag="/"
+            android:text="/" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="x^3"
+            android:text="x^3"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="operatorClick"
+            android:tag="y\u221Ax"
+            android:text="y\u221Ax"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="sin-1"
+            android:text="sin-1"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="cos-1"
+            android:text="cos-1"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="tan-1"
+            android:text="tan-1"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="digitClick"
+            android:tag="7"
+            android:text="7"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="digitClick"
+            android:tag="8"
+            android:text="8" />
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="digitClick"
+            android:tag="9"
+            android:text="9"/>
+
+        <Button
+            style="@style/ButtonAppTheme"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:onClick="operatorClick"
+            android:tag="*"
+            android:text="*" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="horizontal">
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="sqrt"
+            android:text="sqrt"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="10^x"
+            android:text="10^x"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="log"
+            android:text="log"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="e"
+            android:text="e"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="operatorClick"
+            android:tag="Mod"
+            android:text="Mod"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="digitClick"
+            android:tag="4"
+            android:text="4"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="digitClick"
+            android:tag="5"
+            android:text="5" />
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="digitClick"
+            android:tag="6"
+            android:text="6"/>
+
+        <Button android:layout_width="0dp"
+            android:layout_weight="1.5"
+            style="@style/ButtonAppTheme"
+            android:onClick="operatorClick"
+            android:tag="-"
+            android:text="-" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="horizontal">
+
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:paddingStart="0px"
+            android:tag="1/x"
+            android:paddingLeft="0px"
+            android:text="1/x"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="e^x"
+            android:text="e^x"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="ln"
+            android:text="ln"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="operatorClick"
+            android:tag="%"
+            android:text="%"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="deg"
+            android:text="deg"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="digitClick"
+            android:tag="1"
+            android:text="1" />
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="digitClick"
+            android:tag="2"
+            android:text="2"/>
+
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="digitClick"
+            android:tag="3"
+            android:text="3" />
+        <Button android:layout_width="0dp"
+            android:layout_weight="1.5"
+            style="@style/ButtonAppTheme"
+            android:onClick="operatorClick"
+            android:tag="+"
+            android:text="+"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="horizontal">
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:paddingStart="0px"
+            android:tag="|"
+            android:text="up"
+            android:paddingLeft="0px" />
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="pi"
+            android:text="\u03c0"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="n!"
+            android:text="n!"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="ceil"
+            android:text="ceil"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="unaryClick"
+            android:tag="floor"
+            android:text="floor"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="plusMinusClick"
+            android:tag="plusMinus"
+            android:text="\u00B1"/>
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="digitClick"
+            android:tag="0"
+            android:text="0" />
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/ButtonAppTheme"
+            android:onClick="dotClick"
+            android:tag="."
+            android:text="."/>
+
+        <Button android:layout_width="0dp"
+            android:layout_weight="1.5"
+            style="@style/ButtonAppTheme"
+            android:onClick="equalClick"
+            android:tag="="
+            android:text="=" />
+    </LinearLayout>
+</LinearLayout>

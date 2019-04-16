@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>graphs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="sub-heading"><h1>Shortest Path</h1></div>
+    <div class="full-width"><img class="full-width-image" src="images/spath10.jpg" alt=""></div>
+
+    <p><b>Graph: </b>nodes/vertices, and edges/arcs as pairs of nodes.</p>
+    <p><b>Directed graph:</b> each edge (directed/undirected) has a weight.Path between a pair of nodes vi, vk:sequence of edges with vi, vk at the two ends.</p>
+    <p><b>Simple path:</b>covers no node in it twice.</p>
+    <p><b>Loop:</b>a path with the same start and end node.</p>
+    <p><b>Path length:</b>number of edges in it.</p>
+    <p><b>Path weight:</b> total wt of all edges in it.</p>
+    <p><b>Connected graph:</b>there exists a path between every pair of nodes, no node is disconnected.</p>
+    <p class="normal-heading"><b>Strongly-connected component:</b> a subgraph in which there is a path between every pair of nodes</p>
+    <ul>
+        <li>The whole graph could be strongly connected.</li>
+        <li>Only a single node could form its own SCC.</li>
+    </ul>
+    <p>SCC creates partition of nodes in a graph: every node is in a SCC, & no node is outside all SCC’s.
+        A sub-graph of a SCC could be an SCC itself, although not necessarily.
+        Each Spanning Tree of a graph is a strongly connected component of G.
+        For every pair of nodes (v, w) in any Spanning Tree of a graph there exists a path v->w and a path w->v.
+        Every spanning tree is a sub-tree of a spanning tree of a graph.</p>
+    <p><b>Graph Algorithms:</b></p>
+    <ul>
+        <li>Graph traversal with visitor support: BFS, DFS</li>
+        <li>Cycle detection</li>
+        <li>Connected components</li>
+        <li>Topological sorting</li>
+        <li>Shortest paths: Dijkstra, Floyd-Warshall, A*</li>
+        <li>Minimum spanning trees: Prim, Kruskal</li>
+        <li>Flow: Minimum Cut</li>
+        <li>Random graph generation</li>
+    </ul>
+    <b>Single Source Shortest Paths</b>
+    <p>Shortest path problem is to determine one or more shortest path between a source vertex s and a target vertex t, where a set of edges are given.
+        Consider a directed graph G = (V, E) with non-negative edge weight and a distinguished source vertex, s ∈ V. The problem is to determine the distance from the source vertex to every other vertex in the graph.</p>
+    <p><b>Ex- Dijkstra's Algorithm</b></p>
+    <ul>
+        <li>Dijksta's algorithm solves the single source shortest path problem on a weighted directed graph.</li>
+        <li>It is Greedy algorithm.</li>
+        <li>Dijkstra's algorithm starts at the source vertex, it grows a tree T, that spans all vertices reachable from S.</li>
+        <li>Dijkstra's algorithm works similar to Prim's algorithm.</li>
+        <li>It uses BFS (Breadth First Search) to find the shortest distances.</li>
+        <li>The following simple algorithm explains the working principle of Dijkstra's algorithm.</li>
+    </ul>
+    <div class="full-width"><img class="full-width-image" src="images/spath11.png" alt=""></div>
+    <div class="full-width"><img class="full-width-image" src="images/spath12.png" alt=""></div>
+
+    <p>Analysis of Dijkstra's Algorithm: Time complexity is similar to Prim's algorithm</p>
+    <ul>
+        <li>Using Heap : Time complexity is O( |E| log |V| )</li>
+        <li>Using Fibonacci Heap : Time complexity is O(|E| + |V| log |V| )</li>
+        <li>Using Adjacency list : Time complexity is O(|V|2)</li>
+    </ul>
+    <p>Note: Dijkstra's algorithm does not work with negative edge weights. It is important to know that Dijkstra's algorithm requires that weights of all edges are non-negative. Otherwise the procedure is not able to determine whether the shortest path for the node was already found or not.</p>
+    <p><b>Bellman Ford Algorithm</b></p>
+    <ul>
+        <li>Bellman-Ford algorithm solves the single-source shortest-path problem in the general case in which edges of a given digraph can have negative weight as long as given graph G contains no negative cycles.</li>
+        <li>Bellman Ford not uses Greedy approach to find the shortest paths.</li>
+        <li>The algorithm requires that the graph does not contain any cycles of negative length, but if it does, the algorithm is able to detect it.</li>
+    </ul>
+    <div class="full-width"><img class="full-width-image" src="images/spath13.png" alt=""></div>
+    <b>Analysis of Bellman Ford Algorithm:</b>
+    <p>We assume that the algorithm is run on a graph G with |V| nodes  and |E| edges. Let |V|=n, and |E|=m.</p>
+    <ul>
+        <li>At the beginning, the value ∞ is assigned to each node.This requires O(n)</li>
+        <li>Then we do the n-1 phases of the algorithm: one phase less than the number of nodes. In each phase, all edges of the graph are checked, and the distance value of the target node may be changed. We can interpret this check and assignment of a new value as one step and therefore have m steps in each phase. In total all phases together require m • (n-1)steps. This requires O(mn)</li>
+        <li>Afterwards, the algorithm checks whether there is a negative circle, for which he looks at each edge once. Altogether he needs m steps for the check. O(m)</li>
+    </ul>
+    <p>Total Time complexity for Bellman Ford Algorithm: O(m n) = O(|E|.|V|)</p>
+    <p><b>Floyd - Warshall Algorithm</b></p>
+    <ul>
+        <li>It can find shortest (longest) pathsamong all pairs of nodes in a graph, which does not contain any cycles of negative length.</li>
+        <li>It is dynamic programming algorithm.</li>
+        <li>It can be used to detect the presence of negative cycles.</li>
+    </ul>
+    <p>Pseudo Code for Floyd-warshallalgorithm:Let n be the number of vertices in the graph G.</p>
+    <ul>
+        <li>Pred [x,y] can be used to store the reachability and will help to extract the final path between two vertices.</li>
+        <li>d[n,n] will store the result for all pairs shortest paths.</li>
+        <li>w[i, j] contains the weight of an edge (i, j) for the given graph G.</li>
+    </ul>
+    <div class="full-width"><img class="full-width-image" src="images/spath14.png" alt=""></div>
+
+    <div class="previous"><a href="Graphs.html">←</a></div>
+    <div class="sub-home"><a href="Graphs.html">&#8962;</a></div>
+    <div class="next"><a href="Graphs2.html">→</a></div>
+</div>
+</body>
+</html>

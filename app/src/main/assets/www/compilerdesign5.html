@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Runtime Environments</h1>
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp50.jpg" alt="">
+    </div>
+    <p>It refers how do we allocate the space for the generated target code and the data object of our source programs? The places of the data objects that can be determined to compile time will be allocated statically. But the places for the some of data objects will be allocated at run-time.</p>
+    <p>            The allocation and de allocation of the data objects is managed by the run-time support package. Run-time support package is loaded together with the generated target code. The structure of the run-time support package depends on the semantics of the programming language (especially the semantics of procedures in that language).</p>
+    <p class="normal-heading"><strong>Symbol Table</strong></p>
+    <ul>
+        <li>Compiler uses symbol table to keep track of scope and binding information about names</li>
+        <li>Symbol table is changed every time a name is encountered in the source; changes to table occur
+            <ul>
+                <li>if a new name is discovered</li>
+                <li>if new information about an existing name is discovered</li>
+            </ul>
+        </li>
+        <li>Symbol table must have mechanism to:
+            <ul>
+                <li>add new entries</li>
+                <li>find existing information efficiently</li>
+            </ul>
+        </li>
+        <li>Two common mechanism:
+            <ul>
+                <li>linear lists, simple to implement, poor performance</li>
+                <li>hash tables, greater programming/space overhead, good performance</li>
+            </ul>
+        </li>
+        <li>Compiler should be able to grow symbol table dynamically</li>
+        <li>if size is fixed, it must be large enough for the largest program</li>
+    </ul>
+    <div class="full-width"><img class="full-width-image" src="images/comp51.png" alt=""></div>
+    <p class="normal-heading"><strong>Procedure Activation</strong></p>
+    <p>Each activation of a procedure is called as activation of that procedure. An execution of a procedure starts at the beginning of the procedure body. When the procedure is completed, it returns the control to the point immediately after the place, where that procedure is called. Each execution of the procedure is called as its activation.</p>
+    <ul>
+        <li>Lifetime of an activation of that procedure (including the other procedures called by that procedure).</li>
+        <li>If <b>a</b> and <b>b</b> are procedure activations, then their lifetimes are either non-overlapping or are nested.</li>
+        <li>If a procedure is recursive, a new activation can begin before an earlier activation of the same procedure has ended.</li>
+
+    </ul>
+    <p class="normal-heading"><strong>Activation Tree</strong></p>
+    <p>We can create a tree (known as activation tree) to show the way control enters and leaves activations. In an activation tree</p>
+    <ul>
+        <li>Each node represents an activation of a procedure.</li>
+        <li>The root represents the activation of the main program.</li>
+        <li>The node a is a parent of the node b if and only if the control flows from a to b.</li>
+        <li>The node a is left to the node b if the lifetime of a occurs before the lifetime of b.</li>
+    </ul>
+    <pre>
+        Example:
+        Program main; enter main Procedure s; enter p Begin … end;
+        enter q Procedure p; exit q Procedure q;
+        enter s Begin...end; exit s Begin q; s; end;
+        exit p Begin p;s; end; enter s exit s exit main
+    </pre>
+    <p>The flow of the control in a program corresponds to a depth first traversal of the activation tree that</p>
+    <ol>
+        <li>Starts at the root.</li>
+        <li>Visits a node before its children.</li>
+        <li>Recursively visits children at each node and a left-to-right order.</li>
+    </ol>
+    <p><b>A stack called control stack can be used to keep track of live procedure activations.</b></p>
+    <ul>
+        <li>An activation record is pushed onto the control stack as the activation starts.</li>
+        <li>That activation record is popped when that activation ends.</li>
+    </ul>
+    <p><b>When node n is at the top of the control stack, the stack contains the nodes along the path from n to the root.</b></p>
+    <p class="normal-heading"><b>Variable Scope</b></p>
+    <p>The scope rules of the language determine, which declaration of a name applies when the name appears in the program.</p>
+    <p>An occurrence of a variable is local, if that occurrence is in the same procedure in which that name is declared and the variable is non-local, if it is declared outside of that procedure.</p>
+    <pre>
+        Example: Procedure q; Var a: real; Procedure r;
+        Var b: integer;Begin b=1; a=2; end; Begin…end;
+        Variable b is local to procedure r and variable a is non-local to procedure r.
+    </pre>
+    <p>
+        <b>DATA:</b> Locations of static data can also be determined at compile time.
+        <b>CODE: </b>Memory locations for code that are determined at compile time.
+        <b>STACK: </b>Data Objects allocated at run time, supports recursion.
+        <b>HEAP: </b>Dynamically allocated object at run time, supports explicit allocation and deallocation of memory.
+    </p>
+    <p><b>Storage Allocation Strategies</b></p>
+    <ul>
+        <li>Static allocation: lays out storage at compile time for all data objects</li>
+        <li>Stack allocation: manages the runtime storage as a stack</li>
+        <li>Heap allocation :allocates and de-allocates storage as needed at runtime from heap</li>
+    </ul>
+    <p><b>Static allocation:</b></p>
+    <ul>
+        <li>Names are bound to storage as the program is compiled</li>
+        <li>No runtime support is required</li>
+        <li>Bindings do not change at run time</li>
+        <li>On every invocation of procedure names are bound to the same storage</li>
+        <li>Values of local names are retained across activations of a procedure</li>
+        <li>Type of a name determines the amount of storage to be set aside</li>
+        <li>Address of a storage consists of an offset from the end of an activation record</li>
+        <li>Compiler decides location of each activation</li>
+        <li>All the addresses can be filled at compile time</li>
+        <li>
+            <ul><b>Constraints:</b>
+                <li>Size of all data objects must be known at compile time</li>
+                <li>Recursive procedures are not allowed</li>
+            </ul>
+        </li>
+    </ul>
+    <p><b>Static allocation:</b></p>
+    <ul>
+        <li>Address can bind during run-time.</li>
+        <li>Recursion supported</li>
+        <li>Run time allocation supported but can not be managed explicitly.</li>
+    </ul>
+    <p><b>Heap Allocation:</b></p>
+    <ul>
+        <li>Stack allocation cannot be used if:
+            <ul>
+                <li>The values of the local variables must be retained when an activation ends</li>
+                <li>A called activation outlives the caller</li>
+            </ul>
+        </li>
+        <li>In such a case de-allocation of activation record cannot occur in last-in first-out fashion</li>
+        <li>Heap allocation gives out pieces of contiguous storage for activation records</li>
+        <li>There are two aspects of dynamic allocation -:</li>
+        <li>Runtime allocation and de-allocation of data structures.</li>
+        <li>Languages like Algol have dynamic data structures and it reserves some part of memory for it.</li>
+    </ul>
+    <p class="normal-heading"><b>Activation Record</b></p>
+    <p>Information needed by a single execution of a procedure is managed using a contiguous block of storage called activation record. When a procedure is entered, an activation record is allocated and it is deallocated when that procedure exits. Size of each field can be determined at compile time, although actual location of the activation record is determined at run-time.</p>
+    <div class="full-width"><img class="full-width-image" src="images/comp52.png" alt="">
+    <p class="normal-heading"><b>Key Points</b></p>
+        <ul>
+            <li>If a procedure has a local variable and its size depends on a parameter, its size is determined at run-time.</li>
+            <li>Some part of the activation record of a procedure is created by that procedure immediately after that procedure is entered and some part is created by the caller of that procedure before that procedure is entered.</li>
+        </ul>
+        <div class="full-width"><img class="full-width-image" src="images/comp53.png" alt="">
+    <p><b>Return Value:</b> The returned value of the called procedure is returned in this field to the calling procedure. We can use a machine register for the return value.</p>
+
+    <p>    <b>Actual parameters:</b> The field for actual parameters is used by the calling procedure to supply parameter to the called procedure.
+        <b>Optional control link:</b> The optional control link points to the activation record of the caller.
+        <b>Optional access link:</b> It is used to refer to the non-local data held in the other activation record.
+        <b>Saved Machine Status:</b> The field for saved machine status holds information about the state of the machine before the procedure is called
+        <b>Local data:</b> Local data field holds data that is local to an execution of a procedure.
+        <b>Temporaries:</b> Temporary variables are stored in field of temporaries.</p>
+
+        <div class="previous"><a href="compilerdesign4.html">←</a></div>
+    <div class="sub-home"><a href="compiler%20%20design.html">&#8962;</a></div>
+    <div class="next"><a href="compilerdesign1.html">→</a></div>
+</div>
+</body>
+</html>
+
+

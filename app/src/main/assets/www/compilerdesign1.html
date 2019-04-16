@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+        <h1>Intermediate code generation</h1>
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp10.jpeg" alt="">
+    </div>
+
+    <p>Intermediate codes are machine independent codes, but they are close to machine instructions. The given program in a source language is converted to an equivalent program in an intermediate language by the intermediate code generator.
+    </p>
+    <ul>
+        <li>The designer of the compiler decides the intermediate language.</li>
+        <li>Syntax trees can be used as an intermediate language.</li>
+        <li>Postfix notations, three address code (quadruples) can be used as an intermediate language.</li>
+    </ul>
+
+       <span class="normal-heading"><strong>Syntax Tree</strong></span>
+       <p> Syntax tree is a variant of the parse tree, where each leaf represents an operand and each interior node represent an operator.
+    </p>
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp11.png" alt="">
+    </div>
+    <p><strong>A sentence a * (b +d) would have the following syntax tree</strong></p>
+
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp12.png" alt="">
+    </div>
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp13.png" alt="">
+    </div>
+    <span class="normal-heading"><strong>Three-Address Code</strong></span>
+    <p>When each statement contains three addresses (two for operands and one for result), Most general kind of three-address code is</p>
+    <p class="examples">x = yop z</p>
+    <p>Where x, y and z are names, constants or compiler generated temporaries and op is any operator.</p>
+    <p>But we can also use the following notation for quadruples (much better notation because it looks like a machine code instruction)</p>
+    <p class="examples">Op y, z, x</p>
+    <p>Apply operator op to y and z and store the result in x.</p>
+    <span class="normal-heading"><strong>Representation of Three-Address Codes</strong></span>
+    <p>Three-address code can be represented in various forms i.e., quadruples, triples and indirect triples. These forms are demonstrated by way of examples below.</p>
+    <p class="examples">e.g., A = - B*(C +0)</p>
+    Three address code is as follow
+    <pre>
+    T1 = - B
+    T2 = C + D
+    T3 = T1* T2
+    A = T3
+    </pre>
+    <p class="normal-heading"><strong>Quadruple</strong></p>
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp14.png" alt="">
+    </div>
+    <p class="normal-heading"><strong>Triple</strong></p>
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp15.png" alt="">
+    </div>
+    <p class="normal-heading"><strong>Indirect Triple</strong></p>
+    <div class="full-width">
+        <img class="full-width-image" src="images/comp16.png" alt="">
+    </div>
+
+</div>
+<div class="previous"><a href="compiler%20%20design.html">←</a></div>
+<div class="sub-home"><a href="compiler%20%20design.html">&#8962;</a></div>
+<div class="next"><a href="compilerdesign2.html">→</a></div>
+</body>
+</html>

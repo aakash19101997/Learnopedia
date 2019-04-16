@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:background="#DCD9D9"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ImageSwitcher
+            android:id="@+id/img_switcher"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+
+            android:layout_height="200dp">
+
+        </ImageSwitcher>
+
+
+        <TextView android:text="Subject Domain"
+            android:textSize="20dp"
+            android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            />
+
+        <HorizontalScrollView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+              <Button
+                  android:id="@+id/comp_d"
+                  android:background="@drawable/edittext_bg"
+                  android:layout_margin="10dp"
+                  android:layout_width="130dp"
+                  android:layout_height="120dp"
+                  android:text="Compiler Design"
+                  android:drawableTop="@drawable/computer"
+                  android:paddingTop="10dp"
+                  style="@style/Widget.AppCompat.Button.Borderless"/>
+                <Button
+                    android:id="@+id/algo"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="Algorithm"
+                    android:paddingTop="10dp"
+                    android:drawableTop="@drawable/algo"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+                <Button
+                    android:id="@+id/digital_logic"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="Digital LOgic"
+                    android:paddingTop="10dp"
+                    android:drawableTop="@drawable/logic"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+                <Button
+                    android:id="@+id/html"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="Html"
+                    android:paddingTop="10dp"
+                    android:drawableTop="@drawable/html"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+                <Button
+                    android:id="@+id/css"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="CSs"
+                    android:paddingTop="10dp"
+                    android:drawableTop="@drawable/css"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+        <TextView android:text="Learning Resource Type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"/>
+
+        <HorizontalScrollView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/text"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="Text Content"
+                    android:drawableTop="@drawable/text"
+                    android:paddingTop="10dp"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+                <Button
+                    android:id="@+id/video"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="Video Lectures"
+                    android:drawableTop="@drawable/video"
+                    android:paddingTop="10dp"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+                <Button
+                    android:id="@+id/quiz"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="Quizzes"
+                    android:drawableTop="@drawable/quiz"
+                    android:paddingTop="10dp"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+        <TextView android:text="Featured Sources"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+
+        <HorizontalScrollView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/nptel"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="NPTEL"
+                    android:paddingTop="60dp"
+                    android:drawableTop="@drawable/nptel"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+                <Button
+                    android:id="@+id/edx"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="Edx"
+                    android:paddingTop="32dp"
+                    android:drawableTop="@drawable/edx"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+                <Button
+                    android:id="@+id/oracle"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="Oracle"
+                    android:paddingTop="10dp"
+                    android:drawableTop="@drawable/oracle"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+                <Button
+                    android:id="@+id/redhat"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_margin="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="120dp"
+                    android:text="Red Hat"
+                    android:paddingTop="10dp"
+                    android:drawableTop="@drawable/redhat"
+                    style="@style/Widget.AppCompat.Button.Borderless"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>
